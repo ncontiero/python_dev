@@ -25,7 +25,7 @@ RUN echo "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh" >> ~/.zshrc && \
   echo "HISTFILE=/home/python/zsh/.zsh_history" >> ~/.zshrc && \
   echo "export PATH=$HOME/.local/bin:/usr/local/bin:$PATH" >> ~/.zshrc
 
-RUN wget https://gist.github.com/ShadowsS01/d55136902ab2e38527afa986f7d3eb1b/raw/7e73d135a71d8fbbdd03e59819d17b8aded665d6/.startContainer.sh && \
+RUN wget https://gist.github.com/ShadowsS01/d55136902ab2e38527afa986f7d3eb1b/raw/0417ffd9077d86ac0d29195f9fa15d8bd8ce7eac/.startContainer.sh && \
   chmod +x ./.startContainer.sh && \
   mv ./.startContainer.sh ..
 

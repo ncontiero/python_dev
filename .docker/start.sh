@@ -14,7 +14,7 @@ echo "$bold_color$fg[green]Container started \n${reset_color}"
 # echo "\033[0;32mPython version: $PYTHON_VERSION\033"
 # echo "\033[0;32mPip version: $PYTHON_PIP_VERSION\033 \n"
 echo "$bold_color$fg[blue]Python version: $PYTHON_VERSION"
-echo "Pip version: $PYTHON_PIP_VERSION \n${reset_color}"
+echo "$bold_color$fg[blue]Pip version: $PYTHON_PIP_VERSION \n${reset_color}"
 
 # Tip on how to enter the container via CLI
 # echo "\033[0;32mRun this to enter the container via CLI:\033[0m"
