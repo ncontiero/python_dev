@@ -12,6 +12,9 @@ USER python
 
 WORKDIR /home/python/app
 
+RUN wget https://gist.github.com/ShadowsS01/ab9fdbb2cc4b6af40ef3627d4ba968a4/raw/df2cf7829dd00549f8d7889254f5db017a10a8b8/.p10k.zsh && \
+  mv ./.p10k.zsh ../
+
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.3/zsh-in-docker.sh)" -- \
   -t https://github.com/romkatv/powerlevel10k \
   -p git \

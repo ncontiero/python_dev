@@ -5,9 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+    command: python manage.py runserver 0.0.0.0:8080
     ports:
       - 8080:8080
     volumes:
       - .:/home/python/app
-      - ./.docker/zsh/powerlevel10k/.p10k.zsh:/home/python/.p10k.zsh:delegated
+      # - ./.docker/zsh/powerlevel10k/.p10k.zsh:/home/python/.p10k.zsh:delegated
       - ./.docker/zsh/history:/home/python/zsh:delegated
