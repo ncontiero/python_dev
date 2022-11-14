@@ -31,3 +31,7 @@ For many simple, single file projects, you may find it inconvenient to write a c
 ```bash
 docker run -it --rm --name my-app-python -v "$PWD":/home/python/app -w /home/python/app dkshs/python_dev
 ```
+
+## License
+
+This project is under the [MIT](/LICENSE) license.
