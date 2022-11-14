@@ -23,5 +23,6 @@ echo "$ docker exec -it $HOSTNAME zsh \n"
 
 # echo "\033[0;32mContainer is running\033[0m"
 echo "$bold_color$fg[green]Container is running...${reset_color}"
+
 # locking the container
 tail -f /dev/null
