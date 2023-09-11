@@ -8,6 +8,6 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - .:/home/python/app
-      # - ./.docker/zsh/powerlevel10k/.p10k.zsh:/home/python/.p10k.zsh:delegated
-      - ./.docker/zsh/history:/home/python/zsh:delegated
+      - .:/home/dev-user/app:z
+      # - ./.docker/zsh/powerlevel10k/.p10k.zsh:~/.p10k.zsh:delegated
+      - ./.devcontainer/zsh_history:/home/dev-user/.zsh_history:delegated

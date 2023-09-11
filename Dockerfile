@@ -1,37 +1,50 @@
-FROM python:3.8.10-slim
+FROM python:3.11.5-slim-bullseye
+
+ARG USERNAME=dev-user
+ARG APP_HOME=/home/${USERNAME}/app
+
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
 
 RUN apt update && apt install --no-install-recommends -y \
-  git gpg gnupg gpg-agent socat \
+  sudo git gpg gnupg gpg-agent socat ssh \
   zsh \
   curl \
   wget \
-  fonts-powerline
+  fonts-powerline \
+  # cleaning up unused files
+  && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+  && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -ms /bin/bash python
-USER python
+# Create user and add it to sudoers
+RUN groupadd --gid 1000 ${USERNAME} \
+  && useradd --uid 1000 --gid ${USERNAME} --shell /bin/zsh --create-home ${USERNAME} \
+  && echo ${USERNAME} ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/${USERNAME} \
+  && chmod 0440 /etc/sudoers.d/${USERNAME}
 
-WORKDIR /home/python/app
+WORKDIR ${APP_HOME}
 
-RUN wget https://gist.github.com/ShadowsS01/ab9fdbb2cc4b6af40ef3627d4ba968a4/raw/df2cf7829dd00549f8d7889254f5db017a10a8b8/.p10k.zsh && \
-  mv ./.p10k.zsh ../
+COPY ./.docker/start.sh /start.sh
+RUN sed -i 's/\r$//g' /start.sh
+RUN chmod +x /start.sh
 
-RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.3/zsh-in-docker.sh)" -- \
-  -t https://github.com/romkatv/powerlevel10k \
+RUN wget https://gist.github.com/dkshs/ab9fdbb2cc4b6af40ef3627d4ba968a4/raw/df2cf7829dd00549f8d7889254f5db017a10a8b8/.p10k.zsh && \
+  mv ./.p10k.zsh /home/${USERNAME}
+
+USER ${USERNAME}
+
+RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
   -p git \
   -p git-flow \
+  -p ssh-agent \
   -p https://github.com/zdharma-continuum/fast-syntax-highlighting \
   -p https://github.com/zsh-users/zsh-autosuggestions \
   -p https://github.com/zsh-users/zsh-completions \
   -a "export TERM=xterm-256color"
 
 RUN echo "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh" >> ~/.zshrc && \
-  echo "HISTFILE=/home/python/zsh/.zsh_history" >> ~/.zshrc && \
-  echo "export PATH=$HOME/.local/bin:/usr/local/bin:$PATH" >> ~/.zshrc
+  echo "HISTFILE=~/.zsh_history" >> ~/.zshrc && \
+  echo "export PATH=$HOME/.local/bin:/usr/local/bin:$PATH" >> ~/.zshrc && \
+  echo "eval '$(ssh-agent -s)'" >> ~/.zshrc
 
-RUN wget https://gist.github.com/ShadowsS01/d55136902ab2e38527afa986f7d3eb1b/raw/0417ffd9077d86ac0d29195f9fa15d8bd8ce7eac/.startContainer.sh && \
-  chmod +x ./.startContainer.sh && \
-  mv ./.startContainer.sh ..
-
-EXPOSE 8080
-
-CMD [ "../.startContainer.sh" ]
+CMD [ "/start.sh" ]
