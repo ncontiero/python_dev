@@ -28,8 +28,7 @@ COPY ./.docker/start.sh /start.sh
 RUN sed -i 's/\r$//g' /start.sh
 RUN chmod +x /start.sh
 
-RUN wget https://gist.github.com/dkshs/ab9fdbb2cc4b6af40ef3627d4ba968a4/raw/df2cf7829dd00549f8d7889254f5db017a10a8b8/.p10k.zsh && \
-  mv ./.p10k.zsh /home/${USERNAME}
+COPY ./.docker/.p10k.zsh /home/${USERNAME}
 
 USER ${USERNAME}
 
