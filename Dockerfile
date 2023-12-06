@@ -1,4 +1,4 @@
-FROM python:3.11.6-slim-bullseye
+FROM python:3.11.7-slim-bullseye
 
 ARG USERNAME=dev-user
 ARG APP_HOME=/home/${USERNAME}/app
