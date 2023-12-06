@@ -6,7 +6,7 @@ ARG APP_HOME=/home/${USERNAME}/app
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
-RUN apt update && apt install --no-install-recommends -y \
+RUN apt-get update && apt-get install --no-install-recommends -y \
   sudo git gpg gnupg gpg-agent socat ssh \
   zsh \
   curl \
