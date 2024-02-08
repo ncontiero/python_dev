@@ -1,6 +1,6 @@
 # Python Dev <img src="https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/python/logo.png" alt="Python Image" width="30px" />
 
-An image with [Python 3.11.7-slim-bullseye](https://hub.docker.com/layers/library/python/3.11.7-slim-bullseye/images/sha256-18faee15e9f6e5eaa7a4098e093a8513275a5075cfeae59091fae641cc703d1a?context=explore), zsh, [Oh My Zsh](https://ohmyz.sh/), git, gpg, gnupg, gpg-agent, socat, curl, wget, fonts-powerline; using theme [PowerLevel10k](https://github.com/romkatv/powerlevel10k) and plugins: git, git-flow, [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-completions](https://github.com/zsh-users/zsh-completions)
+An image with [Python 3.11.8-slim-bookworm](https://hub.docker.com/layers/library/python/3.11.8-slim-bookworm/images/sha256-93f65e226cd297cee60fbdc2241d2415a479cb68d0199da4345ec8d2627c9bbf?context=explore), zsh, [Oh My Zsh](https://ohmyz.sh/), git, gpg, gnupg, gpg-agent, socat, curl, wget, fonts-powerline; using theme [PowerLevel10k](https://github.com/romkatv/powerlevel10k) and plugins: git, git-flow, [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-completions](https://github.com/zsh-users/zsh-completions)
 
 > The image already contains a code that makes the container stand up!
 
