@@ -1,4 +1,4 @@
-FROM python:3.11.8-slim-bookworm
+FROM python:3.12.2-slim-bookworm
 
 ARG USERNAME=dev-user
 ARG APP_HOME=/home/${USERNAME}/app
