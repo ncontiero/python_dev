@@ -3,24 +3,24 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/dkshs/python_dev/build.yml?branch=master)](https://github.com/dkshs/python_dev/actions/workflows/build.yml?query=branch%3Amaster)
 [![Docker Pulls](https://img.shields.io/docker/pulls/dkshs/python_dev?style=flat-square&color=7c3aed)](https://hub.docker.com/r/dkshs/python_dev)
 
-An Python image with zsh, [Oh My Zsh](https://ohmyz.sh/), git, gpg, gnupg, gpg-agent, socat, curl, wget, fonts-powerline; using theme [PowerLevel10k](https://github.com/romkatv/powerlevel10k) and plugins: git, git-flow, [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-completions](https://github.com/zsh-users/zsh-completions).
+An Python image with [uv](https://github.com/astral-sh/uv), zsh, [Oh My Zsh](https://ohmyz.sh/), git, gpg, gnupg, gpg-agent, socat, curl, wget, fonts-powerline; using theme [PowerLevel10k](https://github.com/romkatv/powerlevel10k) and plugins: git, git-flow, [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-completions](https://github.com/zsh-users/zsh-completions).
 
 ## 🏷 Tags
 
 To use a specific combination of Python see the following table of available image tags.
 
-| Tag                   | Python version | Distro     |
-| --------------------- | -------------- | ---------- |
-| `python3.12`          | 3.12.2         | bookworm   |
-| `python3.12-bullseye` | 3.12.2         | bullseye   |
-| `python3.11`          | 3.11.8         | bookworm   |
-| `python3.11-bullseye` | 3.11.8         | bullseye   |
-| `python3.10`          | 3.10.14        | bookworm   |
-| `python3.10-bullseye` | 3.10.14        | bullseye   |
-| `python3.9`           | 3.9.19         | bookworm   |
-| `python3.9-bullseye`  | 3.9.19         | bullseye   |
-| `python3.8`           | 3.8.19         | bookworm   |
-| `python3.8-bullseye`  | 3.8.19         | bullseye   |
+| Tag             | Python version | Distro     |
+| --------------- | -------------- | ---------- |
+| `3.12`          | 3.12.2         | bookworm   |
+| `3.12-bullseye` | 3.12.2         | bullseye   |
+| `3.11`          | 3.11.8         | bookworm   |
+| `3.11-bullseye` | 3.11.8         | bullseye   |
+| `3.10`          | 3.10.14        | bookworm   |
+| `3.10-bullseye` | 3.10.14        | bullseye   |
+| `3.9`           | 3.9.19         | bookworm   |
+| `3.9-bullseye`  | 3.9.19         | bullseye   |
+| `3.8`           | 3.8.19         | bookworm   |
+| `3.8-bullseye`  | 3.8.19         | bullseye   |
 
 ## Supported versions
 
@@ -41,8 +41,10 @@ Versions are kept up to date using official sources. For Python we scrape the _S
 ```dockerfile
 FROM dkshs/python_dev:latest
 
+USER dev-user
+
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv pip install -r requirements.txt --system
 
 COPY . .
 ```
@@ -66,7 +68,7 @@ All images have a default user `dev-user` with uid 1000 and gid 1000.
 
 ## Disclaimer
 
-> This is experimental and might break from time to time. Use at your own risk!
+> This image is intended for development use only. Use it at your own risk!
 
 ## License
 
