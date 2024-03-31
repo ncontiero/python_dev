@@ -25,4 +25,4 @@ def generate_matrix(versions: list[BuildVersion]) -> None:
     matrix = json.dumps({"include": [dataclasses.asdict(ver) for ver in versions]}) if versions else ""
     _github_action_set_output("MATRIX", matrix)
     logger.info("\n# Build versions:")
-    logger.info("Nothing" if not versions else "\n".join(version.key for version in versions))
+    logger.info("\n".join(version.key for version in versions) if versions else "Nothing")
