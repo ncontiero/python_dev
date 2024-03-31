@@ -1,8 +1,38 @@
 # Python Dev <img src="https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/python/logo.png" alt="Python Image" width="30px" />
 
-An image with [Python 3.12.2-slim-bookworm](https://hub.docker.com/layers/library/python/3.12.2-slim-bookworm/images/sha256-ac212230555ffb7ec17c214fb4cf036ced11b30b5b460994376b0725c7f6c151?context=explore), zsh, [Oh My Zsh](https://ohmyz.sh/), git, gpg, gnupg, gpg-agent, socat, curl, wget, fonts-powerline; using theme [PowerLevel10k](https://github.com/romkatv/powerlevel10k) and plugins: git, git-flow, [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-completions](https://github.com/zsh-users/zsh-completions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/dkshs/python_dev/build.yml?branch=master)](https://github.com/dkshs/python_dev/actions/workflows/build.yml?query=branch%3Amaster)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dkshs/python_dev?style=flat-square&color=7c3aed)](https://hub.docker.com/r/dkshs/python_dev)
 
-> The image already contains a code that makes the container stand up!
+An Python image with zsh, [Oh My Zsh](https://ohmyz.sh/), git, gpg, gnupg, gpg-agent, socat, curl, wget, fonts-powerline; using theme [PowerLevel10k](https://github.com/romkatv/powerlevel10k) and plugins: git, git-flow, [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-completions](https://github.com/zsh-users/zsh-completions).
+
+## 🏷 Tags
+
+To use a specific combination of Python see the following table of available image tags.
+
+| Tag                   | Python version | Distro     |
+| --------------------- | -------------- | ---------- |
+| `python3.12`          | 3.12.2         | bookworm   |
+| `python3.12-bullseye` | 3.12.2         | bullseye   |
+| `python3.11`          | 3.11.8         | bookworm   |
+| `python3.11-bullseye` | 3.11.8         | bullseye   |
+| `python3.10`          | 3.10.14        | bookworm   |
+| `python3.10-bullseye` | 3.10.14        | bullseye   |
+| `python3.9`           | 3.9.19         | bookworm   |
+| `python3.9-bullseye`  | 3.9.19         | bullseye   |
+| `python3.8`           | 3.8.19         | bookworm   |
+| `python3.8-bullseye`  | 3.8.19         | bullseye   |
+
+## Supported versions
+
+| Python version | Start      | End     |
+| -------------- | ---------- | ------- |
+| 3.12           | 2023-10-02 | 2028-10 |
+| 3.11           | 2022-10-24 | 2027-10 |
+| 3.10           | 2021-10-04 | 2026-10 |
+| 3.9            | 2020-10-05 | 2025-10 |
+| 3.8            | 2019-10-14 | 2024-10 |
+
+Versions are kept up to date using official sources. For Python we scrape the _Supported Versions_ table at [devguide.python.org/versions](https://devguide.python.org/versions/#supported-versions).
 
 ## How to use this image
 
@@ -29,8 +59,14 @@ docker run -it --rm --name my-app-python my-python-app
 For many simple, single file projects, you may find it inconvenient to write a complete Dockerfile. In such cases, you can run a Python script by using the Python Docker image directly:
 
 ```bash
-docker run -it --rm --name my-app-python -v "$PWD":/home/dev-user/app -w /home/dev-user/app dkshs/python_dev
+docker run -it --rm --name my-app-python -v "$PWD":/home/dev-user/app dkshs/python_dev
 ```
+
+All images have a default user `dev-user` with uid 1000 and gid 1000.
+
+## Disclaimer
+
+> This is experimental and might break from time to time. Use at your own risk!
 
 ## License
 

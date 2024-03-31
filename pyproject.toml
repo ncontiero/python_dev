@@ -1,0 +1,20 @@
+[tool.ruff]
+line-length = 120
+indent-width = 4
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "T201",  # This is a cli
+  "DTZ003", # Allow naive datetimes
+  "FBT002", # Allow boolean traps
+  "G004", # Allow using f-strings when logging
+  "D", # FIXME: docs
+  "FBT001", # Allow boolean function args
+]
+
+[tool.mypy]
+strict = true
+disallow_any_unimported = true
+no_implicit_optional = true

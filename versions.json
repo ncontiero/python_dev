@@ -1,0 +1,84 @@
+{
+  "versions": [
+    {
+      "key": "3.12",
+      "python": "3.12",
+      "python_canonical": "3.12.2",
+      "python_image": "3.12.2-bookworm",
+      "distro": "bookworm",
+      "platforms": ["linux/amd64", "linux/arm64"]
+    },
+    {
+      "key": "3.12-bullseye",
+      "python": "3.12",
+      "python_canonical": "3.12.2",
+      "python_image": "3.12.2-bullseye",
+      "distro": "bullseye",
+      "platforms": ["linux/amd64", "linux/arm64"]
+    },
+    {
+      "key": "3.11",
+      "python": "3.11",
+      "python_canonical": "3.11.8",
+      "python_image": "3.11.8-bookworm",
+      "distro": "bookworm",
+      "platforms": ["linux/amd64", "linux/arm64"]
+    },
+    {
+      "key": "3.11-bullseye",
+      "python": "3.11",
+      "python_canonical": "3.11.8",
+      "python_image": "3.11.8-bullseye",
+      "distro": "bullseye",
+      "platforms": ["linux/amd64", "linux/arm64"]
+    },
+    {
+      "key": "3.10",
+      "python": "3.10",
+      "python_canonical": "3.10.14",
+      "python_image": "3.10.14-bookworm",
+      "distro": "bookworm",
+      "platforms": ["linux/amd64", "linux/arm64"]
+    },
+    {
+      "key": "3.10-bullseye",
+      "python": "3.10",
+      "python_canonical": "3.10.14",
+      "python_image": "3.10.14-bullseye",
+      "distro": "bullseye",
+      "platforms": ["linux/amd64", "linux/arm64"]
+    },
+    {
+      "key": "3.9",
+      "python": "3.9",
+      "python_canonical": "3.9.19",
+      "python_image": "3.9.19-bookworm",
+      "distro": "bookworm",
+      "platforms": ["linux/amd64", "linux/arm64"]
+    },
+    {
+      "key": "3.9-bullseye",
+      "python": "3.9",
+      "python_canonical": "3.9.19",
+      "python_image": "3.9.19-bullseye",
+      "distro": "bullseye",
+      "platforms": ["linux/amd64", "linux/arm64"]
+    },
+    {
+      "key": "3.8",
+      "python": "3.8",
+      "python_canonical": "3.8.19",
+      "python_image": "3.8.19-bookworm",
+      "distro": "bookworm",
+      "platforms": ["linux/amd64", "linux/arm64"]
+    },
+    {
+      "key": "3.8-bullseye",
+      "python": "3.8",
+      "python_canonical": "3.8.19",
+      "python_image": "3.8.19-bullseye",
+      "distro": "bullseye",
+      "platforms": ["linux/amd64", "linux/arm64"]
+    }
+  ]
+}

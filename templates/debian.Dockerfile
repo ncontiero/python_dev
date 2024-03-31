@@ -1,4 +1,6 @@
-FROM python:bookworm
+# Generated {{ now }}
+# python: {{ python_canonical }}
+FROM python:{{ python_image }}
 
 ARG USERNAME=dev-user
 ARG APP_HOME=/home/${USERNAME}/app
@@ -29,7 +31,7 @@ WORKDIR ${APP_HOME}
 
 RUN curl https://gist.githubusercontent.com/dkshs/ab9fdbb2cc4b6af40ef3627d4ba968a4/raw/df2cf7829dd00549f8d7889254f5db017a10a8b8/.p10k.zsh \
   -o .p10k.zsh \
-  && mv .p10k.zsh ../
+  && mv .p10k.zsh ~/
 
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
   -p git \
