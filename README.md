@@ -41,19 +41,19 @@ Versions are kept up to date using official sources. For Python we scrape the _S
 ```dockerfile
 FROM dkshs/python_dev:latest
 
-USER dev-user
+USER ${USERNAME}
 
 COPY requirements.txt ./
-RUN uv pip install -r requirements.txt --system
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY --chown=${USERNAME}:${USERNAME} . .
 ```
 
 You can then build and run the Docker image:
 
 ```bash
 docker build -t my-python-app .
-docker run -it --rm --name my-app-python my-python-app
+docker run -it --rm my-python-app
 ```
 
 ### Run a single Python script
@@ -61,7 +61,7 @@ docker run -it --rm --name my-app-python my-python-app
 For many simple, single file projects, you may find it inconvenient to write a complete Dockerfile. In such cases, you can run a Python script by using the Python Docker image directly:
 
 ```bash
-docker run -it --rm --name my-app-python -v "$PWD":/home/dev-user/app dkshs/python_dev
+docker run -it --rm -v "$PWD":/home/dev-user/app -u dev-user dkshs/python_dev
 ```
 
 All images have a default user `dev-user` with uid 1000 and gid 1000.
