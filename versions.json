@@ -1,6 +1,14 @@
 {
   "versions": [
     {
+      "key": "latest",
+      "python": "3.12",
+      "python_canonical": "3.12.2",
+      "python_image": "slim-bookworm",
+      "distro": "bookworm",
+      "platforms": ["linux/amd64", "linux/arm64"]
+    },
+    {
       "key": "3.12",
       "python": "3.12",
       "python_canonical": "3.12.2",
