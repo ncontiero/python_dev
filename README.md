@@ -9,18 +9,20 @@ An Python image with [uv](https://github.com/astral-sh/uv), zsh, [Oh My Zsh](htt
 
 To use a specific combination of Python see the following table of available image tags.
 
-| Tag             | Python version | Distro     |
-| --------------- | -------------- | ---------- |
-| `3.12`          | 3.12.2         | bookworm   |
-| `3.12-bullseye` | 3.12.2         | bullseye   |
-| `3.11`          | 3.11.8         | bookworm   |
-| `3.11-bullseye` | 3.11.8         | bullseye   |
-| `3.10`          | 3.10.14        | bookworm   |
-| `3.10-bullseye` | 3.10.14        | bullseye   |
-| `3.9`           | 3.9.19         | bookworm   |
-| `3.9-bullseye`  | 3.9.19         | bullseye   |
-| `3.8`           | 3.8.19         | bookworm   |
-| `3.8-bullseye`  | 3.8.19         | bullseye   |
+| Tag                     | Python version | Distro        |
+| ----------------------- | -------------- | ------------- |
+| `3.12.2-slim-bookworm`  | 3.12.2         | slim-bookworm |
+| `3.12.2-slim-bullseye`  | 3.12.2         | slim-bullseye |
+| `3.11.8-slim-bookworm`  | 3.11.8         | slim-bookworm |
+| `3.11.8-slim-bullseye`  | 3.11.8         | slim-bullseye |
+| `3.10.14-slim-bookworm` | 3.10.14        | slim-bookworm |
+| `3.10.14-slim-bullseye` | 3.10.14        | slim-bullseye |
+| `3.9.19-slim-bookworm`  | 3.9.19         | slim-bookworm |
+| `3.9.19-slim-bullseye`  | 3.9.19         | slim-bullseye |
+| `3.8.19-slim-bookworm`  | 3.8.19         | slim-bookworm |
+| `3.8.19-slim-bullseye`  | 3.8.19         | slim-bullseye |
+
+[See more](https://hub.docker.com/r/dkshs/python_dev/tags)
 
 ## Supported versions
 
