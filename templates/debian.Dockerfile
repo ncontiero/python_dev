@@ -1,5 +1,5 @@
 # Generated {{ now }}
-# python: {{ python_canonical }}
+# python: {{ python_version }}
 FROM python:{{ python_image }}
 
 ARG USERNAME=dev-user

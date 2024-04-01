@@ -9,8 +9,7 @@ class BuildVersion:
     """A docker image build for a specific combination of python versions"""
 
     key: str
-    python: str
-    python_canonical: str
+    python_version: str
     python_image: str
     distro: str
     platforms: list[str]
