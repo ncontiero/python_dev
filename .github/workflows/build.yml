@@ -3,9 +3,10 @@ name: Docker Image CI/CD
 on:
   push:
     branches: [master]
-    paths-ignore: ["README.md"]
+    paths: ["versions.json", "templates"]
   schedule:
     - cron: "0 0 * * 1"
+  workflow_dispatch:
 
 jobs:
   linter:
