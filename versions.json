@@ -2,29 +2,29 @@
   "versions": [
     {
       "key": "latest",
-      "python_version": "3.12.2",
+      "python_version": "3.12.3",
       "python_image": "slim-bookworm",
       "distro": "bookworm",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
       "key": "slim-bullseye",
-      "python_version": "3.12.2",
+      "python_version": "3.12.3",
       "python_image": "slim-bullseye",
       "distro": "bullseye",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.12.2-slim-bookworm",
-      "python_version": "3.12.2",
-      "python_image": "3.12.2-slim-bookworm",
+      "key": "3.12.3-slim-bookworm",
+      "python_version": "3.12.3",
+      "python_image": "3.12.3-slim-bookworm",
       "distro": "bookworm",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.12.2-slim-bullseye",
-      "python_version": "3.12.2",
-      "python_image": "3.12.2-slim-bullseye",
+      "key": "3.12.3-slim-bullseye",
+      "python_version": "3.12.3",
+      "python_image": "3.12.3-slim-bullseye",
       "distro": "bullseye",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
