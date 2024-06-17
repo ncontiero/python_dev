@@ -60,7 +60,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: dockerfiles/${{ matrix.key }}.Dockerfile
@@ -70,7 +70,7 @@ jobs:
         run: |
           docker run --rm dkshs/python_dev:${{ matrix.key }} sh -c "python --version && pip --version && uv --version"
       - name: Push image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: dockerfiles/${{ matrix.key }}.Dockerfile
