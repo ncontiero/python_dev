@@ -11,16 +11,16 @@ To use a specific combination of Python see the following table of available ima
 
 | Tag                     | Python version | Distro        |
 | ----------------------- | -------------- | ------------- |
-| `3.12.4-slim-bookworm`  | 3.12.4         | slim-bookworm |
-| `3.12.4-slim-bullseye`  | 3.12.4         | slim-bullseye |
-| `3.11.9-slim-bookworm`  | 3.11.9         | slim-bookworm |
-| `3.11.9-slim-bullseye`  | 3.11.9         | slim-bullseye |
-| `3.10.14-slim-bookworm` | 3.10.14        | slim-bookworm |
-| `3.10.14-slim-bullseye` | 3.10.14        | slim-bullseye |
-| `3.9.19-slim-bookworm`  | 3.9.19         | slim-bookworm |
-| `3.9.19-slim-bullseye`  | 3.9.19         | slim-bullseye |
-| `3.8.19-slim-bookworm`  | 3.8.19         | slim-bookworm |
-| `3.8.19-slim-bullseye`  | 3.8.19         | slim-bullseye |
+| `3.12.6-slim-bookworm`  | 3.12.6         | slim-bookworm |
+| `3.12.6-slim-bullseye`  | 3.12.6         | slim-bullseye |
+| `3.11.10-slim-bookworm` | 3.11.10        | slim-bookworm |
+| `3.11.10-slim-bullseye` | 3.11.10        | slim-bullseye |
+| `3.10.15-slim-bookworm` | 3.10.15        | slim-bookworm |
+| `3.10.15-slim-bullseye` | 3.10.15        | slim-bullseye |
+| `3.9.20-slim-bookworm`  | 3.9.20         | slim-bookworm |
+| `3.9.20-slim-bullseye`  | 3.9.20         | slim-bullseye |
+| `3.8.20-slim-bookworm`  | 3.8.20         | slim-bookworm |
+| `3.8.20-slim-bullseye`  | 3.8.20         | slim-bullseye |
 
 [See more](https://hub.docker.com/r/dkshs/python_dev/tags)
 
