@@ -3,10 +3,10 @@ FROM python:slim-bookworm
 ARG USERNAME=dev-user
 ARG APP_HOME=/home/${USERNAME}/app
 
-ENV USERNAME ${USERNAME}
-ENV APP_HOME ${APP_HOME}
-ENV PYTHONUNBUFFERED 1
-ENV PYTHONDONTWRITEBYTECODE 1
+ENV USERNAME=${USERNAME}
+ENV APP_HOME=${APP_HOME}
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
   sudo git gpg gnupg gpg-agent socat ssh \
