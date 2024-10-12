@@ -1,17 +1,34 @@
+[project]
+name = "python-dev"
+version = "0.1.0"
+requires-python = "~=3.12"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+  "jinja2==3.1.4",
+  "mypy==1.11.2",
+  "pre-commit==4.0.1",
+  "ruff==0.6.9",
+]
+
 [tool.ruff]
+target-version = "py312"
 line-length = 120
 indent-width = 4
-target-version = "py312"
-
-[tool.ruff.lint]
-select = ["ALL"]
-ignore = [
-  "T201",  # This is a cli
+lint.select = [ "ALL" ]
+lint.ignore = [
+  "D",      # FIXME: docs
   "DTZ003", # Allow naive datetimes
-  "FBT002", # Allow boolean traps
-  "G004", # Allow using f-strings when logging
-  "D", # FIXME: docs
   "FBT001", # Allow boolean function args
+  "FBT002", # Allow boolean traps
+  "G004",   # Allow using f-strings when logging
+  "T201",   # This is a cli
 ]
 
 [tool.mypy]
