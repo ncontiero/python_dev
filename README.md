@@ -11,6 +11,8 @@ To use a specific combination of Python see the following table of available ima
 
 | Tag                     | Python version | Distro        |
 | ----------------------- | -------------- | ------------- |
+| `3.13.0-slim-bookworm`  | 3.13.0         | slim-bookworm |
+| `3.13.0-slim-bullseye`  | 3.13.0         | slim-bullseye |
 | `3.12.7-slim-bookworm`  | 3.12.7         | slim-bookworm |
 | `3.12.7-slim-bullseye`  | 3.12.7         | slim-bullseye |
 | `3.11.10-slim-bookworm` | 3.11.10        | slim-bookworm |
@@ -19,8 +21,6 @@ To use a specific combination of Python see the following table of available ima
 | `3.10.15-slim-bullseye` | 3.10.15        | slim-bullseye |
 | `3.9.20-slim-bookworm`  | 3.9.20         | slim-bookworm |
 | `3.9.20-slim-bullseye`  | 3.9.20         | slim-bullseye |
-| `3.8.20-slim-bookworm`  | 3.8.20         | slim-bookworm |
-| `3.8.20-slim-bullseye`  | 3.8.20         | slim-bullseye |
 
 [See more](https://hub.docker.com/r/dkshs/python_dev/tags)
 
@@ -28,11 +28,11 @@ To use a specific combination of Python see the following table of available ima
 
 | Python version | Start      | End     |
 | -------------- | ---------- | ------- |
+| 3.13           | 2024-10-07 | 2029-10 |
 | 3.12           | 2023-10-02 | 2028-10 |
 | 3.11           | 2022-10-24 | 2027-10 |
 | 3.10           | 2021-10-04 | 2026-10 |
 | 3.9            | 2020-10-05 | 2025-10 |
-| 3.8            | 2019-10-14 | 2024-10 |
 
 Versions are kept up to date using official sources. For Python we scrape the _Supported Versions_ table at [devguide.python.org/versions](https://devguide.python.org/versions/#supported-versions).
 
