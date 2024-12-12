@@ -2,85 +2,85 @@
   "versions": [
     {
       "key": "latest",
-      "python_version": "3.13.0",
+      "python_version": "3.13.1",
       "python_image": "slim-bookworm",
       "distro": "bookworm",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
       "key": "slim-bullseye",
-      "python_version": "3.13.0",
+      "python_version": "3.13.1",
       "python_image": "slim-bullseye",
       "distro": "bullseye",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.13.0-slim-bookworm",
-      "python_version": "3.13.0",
-      "python_image": "3.13.0-slim-bookworm",
+      "key": "3.13.1-slim-bookworm",
+      "python_version": "3.13.1",
+      "python_image": "3.13.1-slim-bookworm",
       "distro": "bookworm",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.13.0-slim-bullseye",
-      "python_version": "3.13.0",
-      "python_image": "3.13.0-slim-bullseye",
+      "key": "3.13.1-slim-bullseye",
+      "python_version": "3.13.1",
+      "python_image": "3.13.1-slim-bullseye",
       "distro": "bullseye",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.12.7-slim-bookworm",
-      "python_version": "3.12.7",
-      "python_image": "3.12.7-slim-bookworm",
+      "key": "3.12.8-slim-bookworm",
+      "python_version": "3.12.8",
+      "python_image": "3.12.8-slim-bookworm",
       "distro": "bookworm",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.12.7-slim-bullseye",
-      "python_version": "3.12.7",
-      "python_image": "3.12.7-slim-bullseye",
+      "key": "3.12.8-slim-bullseye",
+      "python_version": "3.12.8",
+      "python_image": "3.12.8-slim-bullseye",
       "distro": "bullseye",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.11.10-slim-bookworm",
-      "python_version": "3.11.10",
-      "python_image": "3.11.10-slim-bookworm",
+      "key": "3.11.11-slim-bookworm",
+      "python_version": "3.11.11",
+      "python_image": "3.11.11-slim-bookworm",
       "distro": "bookworm",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.11.10-slim-bullseye",
-      "python_version": "3.11.10",
-      "python_image": "3.11.10-slim-bullseye",
+      "key": "3.11.11-slim-bullseye",
+      "python_version": "3.11.11",
+      "python_image": "3.11.11-slim-bullseye",
       "distro": "bullseye",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.10.15-slim-bookworm",
-      "python_version": "3.10.15",
-      "python_image": "3.10.15-slim-bookworm",
+      "key": "3.10.16-slim-bookworm",
+      "python_version": "3.10.16",
+      "python_image": "3.10.16-slim-bookworm",
       "distro": "bookworm",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.10.15-slim-bullseye",
-      "python_version": "3.10.15",
-      "python_image": "3.10.15-slim-bullseye",
+      "key": "3.10.16-slim-bullseye",
+      "python_version": "3.10.16",
+      "python_image": "3.10.16-slim-bullseye",
       "distro": "bullseye",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.9.20-slim-bookworm",
-      "python_version": "3.9.20",
-      "python_image": "3.9.20-slim-bookworm",
+      "key": "3.9.21-slim-bookworm",
+      "python_version": "3.9.21",
+      "python_image": "3.9.21-slim-bookworm",
       "distro": "bookworm",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.9.20-slim-bullseye",
-      "python_version": "3.9.20",
-      "python_image": "3.9.20-slim-bullseye",
+      "key": "3.9.21-slim-bullseye",
+      "python_version": "3.9.21",
+      "python_image": "3.9.21-slim-bullseye",
       "distro": "bullseye",
       "platforms": ["linux/amd64", "linux/arm64"]
     }
