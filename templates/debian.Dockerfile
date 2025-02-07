@@ -35,7 +35,7 @@ RUN curl https://gist.githubusercontent.com/dkshs/ab9fdbb2cc4b6af40ef3627d4ba968
   -o .p10k.zsh \
   && mv .p10k.zsh ~/
 
-RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
+RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.2.1/zsh-in-docker.sh)" -- \
   -p git \
   -p git-flow \
   -p ssh-agent \
