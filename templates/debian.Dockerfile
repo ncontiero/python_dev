@@ -1,6 +1,7 @@
 # Generated {{ now }}
 # python: {{ python_version }}
 FROM python:{{ python_image }}
+LABEL org.opencontainers.image.authors="Nicolas Contiero <https://github.com/dkshs>"
 
 ARG USERNAME=dev-user
 ARG APP_HOME=/home/${USERNAME}/app
@@ -31,9 +32,8 @@ USER ${USERNAME}
 
 WORKDIR ${APP_HOME}
 
-RUN curl https://gist.githubusercontent.com/dkshs/46cbda109e29d1772416d8e44f148a64/raw/50564b1a3e6c326289754a7128ca98c627e0b355/.p10k.zsh \
-  -o .p10k.zsh \
-  && mv .p10k.zsh ~/
+RUN wget https://gist.githubusercontent.com/dkshs/46cbda109e29d1772416d8e44f148a64/raw/50564b1a3e6c326289754a7128ca98c627e0b355/.p10k.zsh && \
+  mv ./.p10k.zsh ~/
 
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.2.1/zsh-in-docker.sh)" -- \
   -p git \
@@ -42,7 +42,7 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
   -p https://github.com/zdharma-continuum/fast-syntax-highlighting \
   -p https://github.com/zsh-users/zsh-autosuggestions \
   -p https://github.com/zsh-users/zsh-completions \
-  -a "export TERM=xterm-256color"
+  -a "export TERM=xterm-256color" -x
 
 RUN echo "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh" >> ~/.zshrc && \
   echo "HISTFILE=~/.zsh_history" >> ~/.zshrc && \
