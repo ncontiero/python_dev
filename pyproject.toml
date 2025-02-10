@@ -37,5 +37,5 @@ no_implicit_optional = true
 dev-dependencies = [
   "mypy==1.15",
   "pre-commit==4.1",
-  "ruff==0.9.5",
+  "ruff==0.9.6",
 ]
