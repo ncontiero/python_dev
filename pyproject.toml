@@ -28,6 +28,9 @@ lint.ignore = [
   "T201",   # This is a cli
 ]
 
+[tool.pyproject-fmt]
+keep_full_version = true
+
 [tool.mypy]
 strict = true
 disallow_any_unimported = true
@@ -35,7 +38,7 @@ no_implicit_optional = true
 
 [tool.uv]
 dev-dependencies = [
-  "mypy==1.15",
-  "pre-commit==4.1",
+  "mypy==1.15.0",
+  "pre-commit==4.1.0",
   "ruff==0.9.6",
 ]
