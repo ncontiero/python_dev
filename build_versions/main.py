@@ -32,7 +32,7 @@ def parse_args() -> CLIArgs:
     parser.add_argument("--dockerfile-with-context", default="", help="Render a dockerfile based on version config")
     parser.add_argument("--verbose", action="store_true", help="Enable debug logging")
 
-    return cast(CLIArgs, parser.parse_args())
+    return cast("CLIArgs", parser.parse_args())
 
 
 if __name__ == "__main__":
