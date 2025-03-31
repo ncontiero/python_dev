@@ -1,6 +1,6 @@
 # Python Dev <img src="https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/python/logo.png" alt="Python Image" width="30px" />
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/dkshs/python_dev/build.yml?branch=master)](https://github.com/dkshs/python_dev/actions/workflows/build.yml?query=branch%3Amaster)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/ncontiero/python_dev/build.yml?branch=master)](https://github.com/ncontiero/python_dev/actions/workflows/build.yml?query=branch%3Amaster)
 [![Docker Pulls](https://img.shields.io/docker/pulls/dkshs/python_dev?style=flat-square&color=7c3aed)](https://hub.docker.com/r/dkshs/python_dev)
 
 An Python image with [uv](https://github.com/astral-sh/uv), zsh, [Oh My Zsh](https://ohmyz.sh/), git, gpg, gnupg, gpg-agent, socat, curl, wget, fonts-powerline; using theme [PowerLevel10k](https://github.com/romkatv/powerlevel10k) and plugins: git, git-flow, [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting), [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions), [zsh-completions](https://github.com/zsh-users/zsh-completions).

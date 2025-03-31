@@ -29,18 +29,17 @@ USER ${USERNAME}
 
 WORKDIR ${APP_HOME}
 
-RUN curl https://gist.githubusercontent.com/dkshs/ab9fdbb2cc4b6af40ef3627d4ba968a4/raw/df2cf7829dd00549f8d7889254f5db017a10a8b8/.p10k.zsh \
-  -o .p10k.zsh \
-  && mv .p10k.zsh ../
+RUN wget https://gist.githubusercontent.com/ncontiero/46cbda109e29d1772416d8e44f148a64/raw/50564b1a3e6c326289754a7128ca98c627e0b355/.p10k.zsh && \
+  mv ./.p10k.zsh ~/
 
-RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
+RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.2.1/zsh-in-docker.sh)" -- \
   -p git \
   -p git-flow \
   -p ssh-agent \
   -p https://github.com/zdharma-continuum/fast-syntax-highlighting \
   -p https://github.com/zsh-users/zsh-autosuggestions \
   -p https://github.com/zsh-users/zsh-completions \
-  -a "export TERM=xterm-256color"
+  -a "export TERM=xterm-256color" -x
 
 RUN echo "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh" >> ~/.zshrc && \
   echo "HISTFILE=~/.zsh_history" >> ~/.zshrc && \
