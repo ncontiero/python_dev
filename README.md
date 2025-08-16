@@ -11,8 +11,8 @@ To use a specific combination of Python see the following table of available ima
 
 | Tag                     | Python version | Distro        |
 | ----------------------- | -------------- | ------------- |
-| `3.13.6-slim-bookworm`  | 3.13.6         | slim-bookworm |
-| `3.13.6-slim-bullseye`  | 3.13.6         | slim-bullseye |
+| `3.13.7-slim-bookworm`  | 3.13.7         | slim-bookworm |
+| `3.13.7-slim-bullseye`  | 3.13.7         | slim-bullseye |
 | `3.12.11-slim-bookworm` | 3.12.11        | slim-bookworm |
 | `3.12.11-slim-bullseye` | 3.12.11        | slim-bullseye |
 | `3.11.13-slim-bookworm` | 3.11.13        | slim-bookworm |
