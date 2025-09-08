@@ -12,15 +12,15 @@ To use a specific combination of Python see the following table of available ima
 | Tag                     | Python version | Distro        |
 | ----------------------- | -------------- | ------------- |
 | `3.13.7-slim-bookworm`  | 3.13.7         | slim-bookworm |
-| `3.13.7-slim-bullseye`  | 3.13.7         | slim-bullseye |
+| `3.13.7-slim-trixie`    | 3.13.7         | slim-trixie   |
 | `3.12.11-slim-bookworm` | 3.12.11        | slim-bookworm |
-| `3.12.11-slim-bullseye` | 3.12.11        | slim-bullseye |
+| `3.12.11-slim-trixie`   | 3.12.11        | slim-trixie   |
 | `3.11.13-slim-bookworm` | 3.11.13        | slim-bookworm |
-| `3.11.13-slim-bullseye` | 3.11.13        | slim-bullseye |
+| `3.11.13-slim-trixie`   | 3.11.13        | slim-trixie   |
 | `3.10.18-slim-bookworm` | 3.10.18        | slim-bookworm |
-| `3.10.18-slim-bullseye` | 3.10.18        | slim-bullseye |
+| `3.10.18-slim-trixie`   | 3.10.18        | slim-trixie   |
 | `3.9.23-slim-bookworm`  | 3.9.23         | slim-bookworm |
-| `3.9.23-slim-bullseye`  | 3.9.23         | slim-bullseye |
+| `3.9.23-slim-trixie`    | 3.9.23         | slim-trixie   |
 
 [See more](https://hub.docker.com/r/dkshs/python_dev/tags)
 

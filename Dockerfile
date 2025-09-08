@@ -1,4 +1,4 @@
-FROM python:slim-bookworm
+FROM python:slim-trixie
 
 ARG USERNAME=dev-user
 ARG APP_HOME=/home/${USERNAME}/app

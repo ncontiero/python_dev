@@ -8,10 +8,10 @@
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "slim-bullseye",
+      "key": "slim-trixie",
       "python_version": "3.13.7",
-      "python_image": "slim-bullseye",
-      "distro": "bullseye",
+      "python_image": "slim-trixie",
+      "distro": "trixie",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
@@ -22,10 +22,10 @@
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.13.7-slim-bullseye",
+      "key": "3.13.7-slim-trixie",
       "python_version": "3.13.7",
-      "python_image": "3.13.7-slim-bullseye",
-      "distro": "bullseye",
+      "python_image": "3.13.7-slim-trixie",
+      "distro": "trixie",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
@@ -36,10 +36,10 @@
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.12.11-slim-bullseye",
+      "key": "3.12.11-slim-trixie",
       "python_version": "3.12.11",
-      "python_image": "3.12.11-slim-bullseye",
-      "distro": "bullseye",
+      "python_image": "3.12.11-slim-trixie",
+      "distro": "trixie",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
@@ -50,10 +50,10 @@
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.11.13-slim-bullseye",
+      "key": "3.11.13-slim-trixie",
       "python_version": "3.11.13",
-      "python_image": "3.11.13-slim-bullseye",
-      "distro": "bullseye",
+      "python_image": "3.11.13-slim-trixie",
+      "distro": "trixie",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
@@ -64,10 +64,10 @@
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.10.18-slim-bullseye",
+      "key": "3.10.18-slim-trixie",
       "python_version": "3.10.18",
-      "python_image": "3.10.18-slim-bullseye",
-      "distro": "bullseye",
+      "python_image": "3.10.18-slim-trixie",
+      "distro": "trixie",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
@@ -78,10 +78,10 @@
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.9.23-slim-bullseye",
+      "key": "3.9.23-slim-trixie",
       "python_version": "3.9.23",
-      "python_image": "3.9.23-slim-bullseye",
-      "distro": "bullseye",
+      "python_image": "3.9.23-slim-trixie",
+      "distro": "trixie",
       "platforms": ["linux/amd64", "linux/arm64"]
     }
   ]
