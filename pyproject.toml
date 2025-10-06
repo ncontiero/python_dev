@@ -1,7 +1,7 @@
 [project]
 name = "python-dev"
 version = "0.1.0"
-requires-python = "~=3.13"
+requires-python = ">=3.9,<3.14"
 classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.9",
@@ -12,6 +12,13 @@ classifiers = [
 ]
 dependencies = [
   "jinja2==3.1.6",
+]
+
+[dependency-groups]
+dev = [
+  "mypy==1.18.2",
+  "pre-commit==4.3.0",
+  "ruff==0.13.3",
 ]
 
 [tool.ruff]
@@ -35,10 +42,3 @@ keep_full_version = true
 strict = true
 disallow_any_unimported = true
 no_implicit_optional = true
-
-[tool.uv]
-dev-dependencies = [
-  "mypy==1.18.2",
-  "pre-commit==4.3.0",
-  "ruff==0.13.3",
-]
