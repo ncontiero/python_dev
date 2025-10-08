@@ -11,8 +11,10 @@ To use a specific combination of Python see the following table of available ima
 
 | Tag                     | Python version | Distro        |
 | ----------------------- | -------------- | ------------- |
-| `3.13.7-slim-bookworm`  | 3.13.7         | slim-bookworm |
-| `3.13.7-slim-trixie`    | 3.13.7         | slim-trixie   |
+| `3.14.0-slim-bookworm`  | 3.14.0         | slim-bookworm |
+| `3.14.0-slim-trixie`    | 3.14.0         | slim-trixie   |
+| `3.13.8-slim-bookworm`  | 3.13.8         | slim-bookworm |
+| `3.13.8-slim-trixie`    | 3.13.8         | slim-trixie   |
 | `3.12.11-slim-bookworm` | 3.12.11        | slim-bookworm |
 | `3.12.11-slim-trixie`   | 3.12.11        | slim-trixie   |
 | `3.11.13-slim-bookworm` | 3.11.13        | slim-bookworm |
@@ -28,6 +30,7 @@ To use a specific combination of Python see the following table of available ima
 
 | Python version | Start      | End     |
 | -------------- | ---------- | ------- |
+| 3.14           | 2025-10-07 | 2030-10 |
 | 3.13           | 2024-10-07 | 2029-10 |
 | 3.12           | 2023-10-02 | 2028-10 |
 | 3.11           | 2022-10-24 | 2027-10 |
