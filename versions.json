@@ -83,20 +83,6 @@
       "python_image": "3.10.18-slim-bookworm",
       "distro": "bookworm",
       "platforms": ["linux/amd64", "linux/arm64"]
-    },
-    {
-      "key": "3.9.23-slim-trixie",
-      "python_version": "3.9.23",
-      "python_image": "3.9.23-slim-trixie",
-      "distro": "trixie",
-      "platforms": ["linux/amd64", "linux/arm64"]
-    },
-    {
-      "key": "3.9.23-slim-bookworm",
-      "python_version": "3.9.23",
-      "python_image": "3.9.23-slim-bookworm",
-      "distro": "bookworm",
-      "platforms": ["linux/amd64", "linux/arm64"]
     }
   ]
 }

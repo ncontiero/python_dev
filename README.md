@@ -21,8 +21,6 @@ To use a specific combination of Python see the following table of available ima
 | `3.11.13-slim-trixie`   | 3.11.13        | slim-trixie   |
 | `3.10.18-slim-bookworm` | 3.10.18        | slim-bookworm |
 | `3.10.18-slim-trixie`   | 3.10.18        | slim-trixie   |
-| `3.9.23-slim-bookworm`  | 3.9.23         | slim-bookworm |
-| `3.9.23-slim-trixie`    | 3.9.23         | slim-trixie   |
 
 [See more](https://hub.docker.com/r/dkshs/python_dev/tags)
 
@@ -35,7 +33,6 @@ To use a specific combination of Python see the following table of available ima
 | 3.12           | 2023-10-02 | 2028-10 |
 | 3.11           | 2022-10-24 | 2027-10 |
 | 3.10           | 2021-10-04 | 2026-10 |
-| 3.9            | 2020-10-05 | 2025-10 |
 
 Versions are kept up to date using official sources. For Python we scrape the _Supported Versions_ table at [devguide.python.org/versions](https://devguide.python.org/versions/#supported-versions).
 
