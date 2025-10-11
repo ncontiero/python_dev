@@ -15,12 +15,12 @@ To use a specific combination of Python see the following table of available ima
 | `3.14.0-slim-trixie`    | 3.14.0         | slim-trixie   |
 | `3.13.8-slim-bookworm`  | 3.13.8         | slim-bookworm |
 | `3.13.8-slim-trixie`    | 3.13.8         | slim-trixie   |
-| `3.12.11-slim-bookworm` | 3.12.11        | slim-bookworm |
-| `3.12.11-slim-trixie`   | 3.12.11        | slim-trixie   |
-| `3.11.13-slim-bookworm` | 3.11.13        | slim-bookworm |
-| `3.11.13-slim-trixie`   | 3.11.13        | slim-trixie   |
-| `3.10.18-slim-bookworm` | 3.10.18        | slim-bookworm |
-| `3.10.18-slim-trixie`   | 3.10.18        | slim-trixie   |
+| `3.12.12-slim-bookworm` | 3.12.12        | slim-bookworm |
+| `3.12.12-slim-trixie`   | 3.12.12        | slim-trixie   |
+| `3.11.14-slim-bookworm` | 3.11.14        | slim-bookworm |
+| `3.11.14-slim-trixie`   | 3.11.14        | slim-trixie   |
+| `3.10.19-slim-bookworm` | 3.10.19        | slim-bookworm |
+| `3.10.19-slim-trixie`   | 3.10.19        | slim-trixie   |
 
 [See more](https://hub.docker.com/r/dkshs/python_dev/tags)
 
