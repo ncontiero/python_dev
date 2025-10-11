@@ -3,8 +3,10 @@ import json
 import logging
 import os
 from pathlib import Path
+from typing import TYPE_CHECKING
 
-from build_versions.versions import BuildVersion
+if TYPE_CHECKING:
+    from build_versions.versions import BuildVersion
 
 CI_EVENT_SCHEDULED = "scheduled"
 

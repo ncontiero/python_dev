@@ -2,13 +2,15 @@ import dataclasses
 import datetime
 import json
 import logging
-from collections.abc import Mapping
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from build_versions.constants import DOCKERFILES_PATH
 from build_versions.versions import BuildVersion
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
 
 logger = logging.getLogger("dpn")
 
