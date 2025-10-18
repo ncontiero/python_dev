@@ -29,16 +29,16 @@
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.13.8-slim-trixie",
-      "python_version": "3.13.8",
-      "python_image": "3.13.8-slim-trixie",
+      "key": "3.13.9-slim-trixie",
+      "python_version": "3.13.9",
+      "python_image": "3.13.9-slim-trixie",
       "distro": "trixie",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
     {
-      "key": "3.13.8-slim-bookworm",
-      "python_version": "3.13.8",
-      "python_image": "3.13.8-slim-bookworm",
+      "key": "3.13.9-slim-bookworm",
+      "python_version": "3.13.9",
+      "python_image": "3.13.9-slim-bookworm",
       "distro": "bookworm",
       "platforms": ["linux/amd64", "linux/arm64"]
     },
