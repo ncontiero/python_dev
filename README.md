@@ -13,8 +13,8 @@ To use a specific combination of Python see the following table of available ima
 | ----------------------- | -------------- | ------------- |
 | `3.14.0-slim-bookworm`  | 3.14.0         | slim-bookworm |
 | `3.14.0-slim-trixie`    | 3.14.0         | slim-trixie   |
-| `3.13.8-slim-bookworm`  | 3.13.8         | slim-bookworm |
-| `3.13.8-slim-trixie`    | 3.13.8         | slim-trixie   |
+| `3.13.9-slim-bookworm`  | 3.13.9         | slim-bookworm |
+| `3.13.9-slim-trixie`    | 3.13.9         | slim-trixie   |
 | `3.12.12-slim-bookworm` | 3.12.12        | slim-bookworm |
 | `3.12.12-slim-trixie`   | 3.12.12        | slim-trixie   |
 | `3.11.14-slim-bookworm` | 3.11.14        | slim-bookworm |
