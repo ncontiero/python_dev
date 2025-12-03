@@ -9,18 +9,18 @@ An Python image with [uv](https://github.com/astral-sh/uv), zsh, [Oh My Zsh](htt
 
 To use a specific combination of Python see the following table of available image tags.
 
-| Tag                     | Python version | Distro        |
-| ----------------------- | -------------- | ------------- |
-| `3.14.0-slim-bookworm`  | 3.14.0         | slim-bookworm |
-| `3.14.0-slim-trixie`    | 3.14.0         | slim-trixie   |
-| `3.13.9-slim-bookworm`  | 3.13.9         | slim-bookworm |
-| `3.13.9-slim-trixie`    | 3.13.9         | slim-trixie   |
-| `3.12.12-slim-bookworm` | 3.12.12        | slim-bookworm |
-| `3.12.12-slim-trixie`   | 3.12.12        | slim-trixie   |
-| `3.11.14-slim-bookworm` | 3.11.14        | slim-bookworm |
-| `3.11.14-slim-trixie`   | 3.11.14        | slim-trixie   |
-| `3.10.19-slim-bookworm` | 3.10.19        | slim-bookworm |
-| `3.10.19-slim-trixie`   | 3.10.19        | slim-trixie   |
+| Tag                      | Python version | Distro        |
+| ------------------------ | -------------- | ------------- |
+| `3.14.1-slim-bookworm`   | 3.14.1         | slim-bookworm |
+| `3.14.1-slim-trixie`     | 3.14.1         | slim-trixie   |
+| `3.13.10-slim-bookworm`  | 3.13.10        | slim-bookworm |
+| `3.13.10-slim-trixie`    | 3.13.10        | slim-trixie   |
+| `3.12.12-slim-bookworm`  | 3.12.12        | slim-bookworm |
+| `3.12.12-slim-trixie`    | 3.12.12        | slim-trixie   |
+| `3.11.14-slim-bookworm`  | 3.11.14        | slim-bookworm |
+| `3.11.14-slim-trixie`    | 3.11.14        | slim-trixie   |
+| `3.10.19-slim-bookworm`  | 3.10.19        | slim-bookworm |
+| `3.10.19-slim-trixie`    | 3.10.19        | slim-trixie   |
 
 [See more](https://hub.docker.com/r/dkshs/python_dev/tags)
 
