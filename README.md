@@ -11,10 +11,10 @@ To use a specific combination of Python see the following table of available ima
 
 | Tag                      | Python version | Distro        |
 | ------------------------ | -------------- | ------------- |
-| `3.14.1-slim-bookworm`   | 3.14.1         | slim-bookworm |
-| `3.14.1-slim-trixie`     | 3.14.1         | slim-trixie   |
-| `3.13.10-slim-bookworm`  | 3.13.10        | slim-bookworm |
-| `3.13.10-slim-trixie`    | 3.13.10        | slim-trixie   |
+| `3.14.2-slim-bookworm`   | 3.14.2         | slim-bookworm |
+| `3.14.2-slim-trixie`     | 3.14.2         | slim-trixie   |
+| `3.13.11-slim-bookworm`  | 3.13.11        | slim-bookworm |
+| `3.13.11-slim-trixie`    | 3.13.11        | slim-trixie   |
 | `3.12.12-slim-bookworm`  | 3.12.12        | slim-bookworm |
 | `3.12.12-slim-trixie`    | 3.12.12        | slim-trixie   |
 | `3.11.14-slim-bookworm`  | 3.11.14        | slim-bookworm |
