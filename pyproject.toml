@@ -4,6 +4,7 @@ version = "0.1.0"
 requires-python = "~=3.14.0"
 classifiers = [
   "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
   "jinja2==3.1.6",
@@ -13,7 +14,7 @@ dependencies = [
 dev = [
   "mypy==1.19.1",
   "pre-commit==4.5.1",
-  "ruff==0.15.1",
+  "ruff==0.15.4",
 ]
 
 [tool.ruff]
