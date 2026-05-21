@@ -5,6 +5,7 @@ from typing import cast
 from build_versions.ci_matrix import generate_matrix
 from build_versions.dockerfiles import render_dockerfile_with_context
 from build_versions.logger import init_logging
+from build_versions.update import update_versions
 from build_versions.versions import load_versions
 
 logger = logging.getLogger("dpn")
@@ -13,10 +14,15 @@ logger = logging.getLogger("dpn")
 class CLIArgs(argparse.Namespace):
     ci_matrix: bool
     dockerfile_with_context: str
+    update: bool
     verbose: bool
 
 
 def main(args: CLIArgs) -> None:
+    if args.update:
+        update_versions()
+        return
+
     if args.dockerfile_with_context:
         render_dockerfile_with_context(args.dockerfile_with_context)
         return
@@ -30,6 +36,7 @@ def parse_args() -> CLIArgs:
     parser = argparse.ArgumentParser(usage="Build Python docker images")
     parser.add_argument("--ci-matrix", action="store_true", help="Generate CI build matrix")
     parser.add_argument("--dockerfile-with-context", default="", help="Render a dockerfile based on version config")
+    parser.add_argument("--update", action="store_true", help="Update versions.json based on Docker Hub")
     parser.add_argument("--verbose", action="store_true", help="Enable debug logging")
 
     return cast("CLIArgs", parser.parse_args())

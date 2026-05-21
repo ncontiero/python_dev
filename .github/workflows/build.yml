@@ -74,3 +74,10 @@ jobs:
           platforms: ${{ join(matrix.platforms) }}
           push: true
           tags: dkshs/python_dev:${{ matrix.key }}
+      - name: Update Docker Hub Description
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peter-evans/dockerhub-description@v5
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: dkshs/python_dev

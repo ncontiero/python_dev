@@ -9,18 +9,20 @@ An Python image with [uv](https://github.com/astral-sh/uv), zsh, [Oh My Zsh](htt
 
 To use a specific combination of Python see the following table of available image tags.
 
+<!-- TAGS_START -->
 | Tag                      | Python version | Distro        |
 | ------------------------ | -------------- | ------------- |
-| `3.14.3-slim-bookworm`   | 3.14.3         | slim-bookworm |
-| `3.14.3-slim-trixie`     | 3.14.3         | slim-trixie   |
-| `3.13.12-slim-bookworm`  | 3.13.12        | slim-bookworm |
-| `3.13.12-slim-trixie`    | 3.13.12        | slim-trixie   |
-| `3.12.12-slim-bookworm`  | 3.12.12        | slim-bookworm |
-| `3.12.12-slim-trixie`    | 3.12.12        | slim-trixie   |
-| `3.11.14-slim-bookworm`  | 3.11.14        | slim-bookworm |
-| `3.11.14-slim-trixie`    | 3.11.14        | slim-trixie   |
-| `3.10.19-slim-bookworm`  | 3.10.19        | slim-bookworm |
-| `3.10.19-slim-trixie`    | 3.10.19        | slim-trixie   |
+| `3.14.5-slim-trixie`     | 3.14.5         | trixie        |
+| `3.14.5-slim-bookworm`   | 3.14.5         | bookworm      |
+| `3.13.13-slim-trixie`    | 3.13.13        | trixie        |
+| `3.13.13-slim-bookworm`  | 3.13.13        | bookworm      |
+| `3.12.13-slim-trixie`    | 3.12.13        | trixie        |
+| `3.12.13-slim-bookworm`  | 3.12.13        | bookworm      |
+| `3.11.15-slim-trixie`    | 3.11.15        | trixie        |
+| `3.11.15-slim-bookworm`  | 3.11.15        | bookworm      |
+| `3.10.20-slim-trixie`    | 3.10.20        | trixie        |
+| `3.10.20-slim-bookworm`  | 3.10.20        | bookworm      |
+<!-- TAGS_END -->
 
 [See more](https://hub.docker.com/r/dkshs/python_dev/tags)
 
@@ -74,4 +76,4 @@ All images have a default user `dev-user` with uid 1000 and gid 1000.
 
 ## License
 
-This project is under the [MIT](/LICENSE) license.
+This project is under the [MIT](https://github.com/ncontiero/python_dev/blob/main/LICENSE) license.
