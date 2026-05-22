@@ -22,6 +22,8 @@ pdev = "python_dev:pdev"
 dev = [
   "mypy==2.1.0",
   "pre-commit==4.6.0",
+  "pytest==9.0.3",
+  "pytest-mock==3.15.1",
   "ruff==0.15.14",
 ]
 
@@ -38,6 +40,9 @@ lint.ignore = [
   "G004",   # Allow using f-strings when logging
   "T201",   # This is a cli
 ]
+
+[tool.ruff.lint.per-file-ignores]
+"**/test*.py" = ["S101", "PLR2004"]
 
 [tool.pyproject-fmt]
 keep_full_version = true
