@@ -4,7 +4,7 @@ import re
 
 import httpx
 
-from .constants import VERSIONS_PATH
+from .constants import DOCKERHUB_API_URL, VERSIONS_PATH
 from .logger import logger
 from .versions import BuildVersion, load_versions
 
@@ -15,7 +15,7 @@ def fetch_latest_patch_versions(minor_versions: set[str], distros: list[str]) ->
     """
     latest_versions: dict[str, dict[str, str]] = {m: {} for m in minor_versions}
     for minor_version in minor_versions:
-        url = f"https://hub.docker.com/v2/repositories/library/python/tags/?page_size=100&name={minor_version}"
+        url = f"{DOCKERHUB_API_URL}?page_size=100&name={minor_version}"
         response = httpx.get(url)
         response.raise_for_status()
         results = response.json().get("results", [])

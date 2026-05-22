@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING, Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from .constants import DOCKERFILES_PATH
+from .constants import BASE_MAPPING, DOCKERFILES_PATH
 from .logger import logger
 from .versions import BuildVersion
 
@@ -21,14 +21,10 @@ def _render_template(template_name: str, context: Mapping[str, Any]) -> str:
 
 
 def render_dockerfile(version: BuildVersion) -> str:
-    base_mapping = {
-        "bookworm": "debian",
-        "trixie": "debian",
-    }
-    base = base_mapping.get(version.distro, "debian")
+    base = BASE_MAPPING.get(version.distro, "debian")
 
     context = dataclasses.asdict(version) | {
-        "now": datetime.datetime.now(datetime.UTC).isoformat()[:-7],
+        "now": datetime.datetime.now(datetime.UTC).replace(microsecond=0).isoformat(),
         "distro": version.distro,
     }
 
