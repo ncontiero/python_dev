@@ -1,7 +1,7 @@
 from pathlib import Path
 
 # Paths
-BASE_PATH = Path(__file__).parent.parent
+BASE_PATH = Path(__file__).parent.parent.parent
 VERSIONS_PATH = BASE_PATH / "versions.json"
 DOCKERFILES_PATH = BASE_PATH / "dockerfiles"
 
