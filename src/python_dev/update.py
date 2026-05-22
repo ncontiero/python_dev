@@ -70,29 +70,48 @@ def generate_new_versions() -> list[BuildVersion]:  # noqa: C901
     # Assume the first one is the "latest" python version
     latest_minor = sorted_minors[0] if sorted_minors else None
 
+    # 1. latest
+    if latest_minor and latest_distro:
+        full_version = latest_patches.get(latest_minor, {}).get(latest_distro)
+        if full_version:
+            new_versions.append(
+                BuildVersion(
+                    key="latest",
+                    python_version=full_version,
+                    python_image=f"slim-{latest_distro}",
+                    distro=latest_distro,
+                    platforms=DEFAULT_PLATFORMS,
+                ),
+            )
+
+    # 2. slim-<distro>
+    if latest_minor:
+        for distro in sorted(distros, reverse=True):
+            full_version = latest_patches.get(latest_minor, {}).get(distro)
+            if full_version:
+                new_versions.append(
+                    BuildVersion(
+                        key=f"slim-{distro}",
+                        python_version=full_version,
+                        python_image=f"slim-{distro}",
+                        distro=distro,
+                        platforms=DEFAULT_PLATFORMS,
+                    ),
+                )
+
+    # 3. <version>-slim-<distro>
     for minor in sorted_minors:
         for distro in sorted(distros, reverse=True):
             full_version = latest_patches.get(minor, {}).get(distro)
-            if not full_version:
-                continue
-
-            python_image = f"{full_version}-slim-{distro}"
-            platforms = DEFAULT_PLATFORMS
-
-            tags = [(python_image, python_image)]
-            if minor == latest_minor:
-                tags.append((f"slim-{distro}", f"slim-{distro}"))
-                if distro == latest_distro:
-                    tags.append(("latest", f"slim-{distro}"))
-
-            for key, image in tags:
+            if full_version:
+                python_image = f"{full_version}-slim-{distro}"
                 new_versions.append(
                     BuildVersion(
-                        key=key,
+                        key=python_image,
                         python_version=full_version,
-                        python_image=image,
+                        python_image=python_image,
                         distro=distro,
-                        platforms=platforms,
+                        platforms=DEFAULT_PLATFORMS,
                     ),
                 )
 
