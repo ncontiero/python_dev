@@ -101,13 +101,11 @@ def test_update_versions_with_changes(mocker: MockerFixture, tmp_path: Path) -> 
 
     versions_path = tmp_path / "versions.json"
     mocker.patch("python_dev.update.VERSIONS_PATH", versions_path)
-    mock_update_readme = mocker.patch("python_dev.update.update_readme")
     mock_logger = mocker.patch("python_dev.update.logger")
 
     update_versions()
 
     mock_logger.info.assert_any_call("Updating versions.json...")
-    mock_update_readme.assert_called_once_with([new_version])
 
     data = json.loads(versions_path.read_text())
     assert data["versions"][0]["python_version"] == "3.15.0"
