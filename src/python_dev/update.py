@@ -4,7 +4,7 @@ import re
 
 import httpx
 
-from .constants import DEFAULT_PLATFORMS, VERSIONS_PATH
+from .constants import VERSIONS_PATH
 from .logger import logger
 from .versions import BuildVersion, load_versions
 
@@ -41,62 +41,48 @@ def fetch_latest_patch_versions(minor_versions: set[str], distros: list[str]) ->
     return latest_versions
 
 
-def generate_new_versions() -> list[BuildVersion]:  # noqa: C901
+def generate_new_versions() -> list[BuildVersion]:
     current_versions = load_versions()
     # Extract unique minor versions and distros from current versions
     minor_versions = set()
     distros = set()
-    latest_distro = "trixie"
 
     for v in current_versions:
-        match = re.match(r"^(\d+\.\d+)", v.python_version)
-        if match:
+        if match := re.match(r"^(\d+\.\d+)", v.python_version):
             minor_versions.add(match.group(1))
         distros.add(v.distro)
-        if v.key == "latest":
-            latest_distro = v.distro
 
     logger.info("Fetching latest patch versions from Docker Hub...")
     latest_patches = fetch_latest_patch_versions(minor_versions, list(distros))
 
     new_versions = []
+    has_changes = False
 
-    # Sort minor versions descending (e.g. 3.14, 3.13, ...)
-    def parse_minor(mv: str) -> tuple[int, ...]:
-        return tuple(int(x) for x in mv.split("."))
+    for v in current_versions:
+        match = re.match(r"^(\d+\.\d+)", v.python_version)
+        if not match:
+            new_versions.append(dataclasses.replace(v))
+            continue
 
-    sorted_minors = sorted(minor_versions, key=parse_minor, reverse=True)
+        minor = match.group(1)
+        distro = v.distro
 
-    # Assume the first one is the "latest" python version
-    latest_minor = sorted_minors[0] if sorted_minors else None
+        latest_patch = latest_patches.get(minor, {}).get(distro)
+        if not latest_patch or latest_patch == v.python_version:
+            new_versions.append(dataclasses.replace(v))
+            continue
 
-    for minor in sorted_minors:
-        for distro in sorted(distros, reverse=True):
-            full_version = latest_patches.get(minor, {}).get(distro)
-            if not full_version:
-                continue
+        old_version = v.python_version
+        new_v = dataclasses.replace(
+            v,
+            python_version=latest_patch,
+            key=v.key.replace(old_version, latest_patch),
+            python_image=v.python_image.replace(old_version, latest_patch),
+        )
+        new_versions.append(new_v)
+        has_changes = True
 
-            python_image = f"{full_version}-slim-{distro}"
-            platforms = DEFAULT_PLATFORMS
-
-            tags = [(python_image, python_image)]
-            if minor == latest_minor:
-                tags.append((f"slim-{distro}", f"slim-{distro}"))
-                if distro == latest_distro:
-                    tags.append(("latest", f"slim-{distro}"))
-
-            for key, image in reversed(tags):
-                new_versions.append(
-                    BuildVersion(
-                        key=key,
-                        python_version=full_version,
-                        python_image=image,
-                        distro=distro,
-                        platforms=platforms,
-                    ),
-                )
-
-    return new_versions
+    return new_versions if has_changes else []
 
 
 def update_readme(versions: list[BuildVersion]) -> None:
@@ -133,14 +119,11 @@ def update_versions() -> None:
     logger.info("Checking for version updates...")
     new_versions = generate_new_versions()
 
-    current_versions = load_versions()
-
-    current_dicts = [dataclasses.asdict(v) for v in current_versions]
-    new_dicts = [dataclasses.asdict(v) for v in new_versions]
-
-    if current_dicts == new_dicts:
+    if not new_versions:
         logger.info("Versions are up to date.")
         return
+
+    new_dicts = [dataclasses.asdict(v) for v in new_versions]
 
     logger.info("Updating versions.json...")
     with VERSIONS_PATH.open("w") as fp:

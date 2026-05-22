@@ -59,8 +59,8 @@ def test_generate_new_versions(mocker: MockerFixture) -> None:
     assert "slim-trixie" in keys
     assert "3.14.5-slim-trixie" in keys
 
-    latest = next(v for v in new_versions if v.key == "latest")
-    assert latest.python_version == "3.14.5"
+    for v in new_versions:
+        assert v.python_version == "3.14.5"
 
 
 def test_update_readme(mocker: MockerFixture, tmp_path: Path) -> None:
@@ -86,7 +86,6 @@ def test_update_readme(mocker: MockerFixture, tmp_path: Path) -> None:
 
 def test_update_versions_no_changes(mocker: MockerFixture) -> None:
     mocker.patch("python_dev.update.generate_new_versions", return_value=[])
-    mocker.patch("python_dev.update.load_versions", return_value=[])
     mock_logger = mocker.patch("python_dev.update.logger")
 
     update_versions()
@@ -97,7 +96,6 @@ def test_update_versions_no_changes(mocker: MockerFixture) -> None:
 def test_update_versions_with_changes(mocker: MockerFixture, tmp_path: Path) -> None:
     new_version = BuildVersion("latest", "3.15.0", "slim-trixie", "trixie", [])
     mocker.patch("python_dev.update.generate_new_versions", return_value=[new_version])
-    mocker.patch("python_dev.update.load_versions", return_value=[])
 
     versions_path = tmp_path / "versions.json"
     mocker.patch("python_dev.update.VERSIONS_PATH", versions_path)
