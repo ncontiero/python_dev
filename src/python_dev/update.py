@@ -4,9 +4,9 @@ import re
 
 import httpx
 
-from build_versions.constants import DEFAULT_PLATFORMS, VERSIONS_PATH
-from build_versions.logger import logger
-from build_versions.versions import BuildVersion, load_versions
+from .constants import DEFAULT_PLATFORMS, VERSIONS_PATH
+from .logger import logger
+from .versions import BuildVersion, load_versions
 
 
 def fetch_latest_patch_versions(minor_versions: set[str], distros: list[str]) -> dict[str, dict[str, str]]:
@@ -41,7 +41,7 @@ def fetch_latest_patch_versions(minor_versions: set[str], distros: list[str]) ->
     return latest_versions
 
 
-def generate_new_versions() -> list[BuildVersion]:
+def generate_new_versions() -> list[BuildVersion]:  # noqa: C901
     current_versions = load_versions()
     # Extract unique minor versions and distros from current versions
     minor_versions = set()
@@ -49,9 +49,9 @@ def generate_new_versions() -> list[BuildVersion]:
     latest_distro = "trixie"
 
     for v in current_versions:
-        parts = v.python_version.split(".")
-        if len(parts) >= 2:
-            minor_versions.add(f"{parts[0]}.{parts[1]}")
+        match = re.match(r"^(\d+\.\d+)", v.python_version)
+        if match:
+            minor_versions.add(match.group(1))
         distros.add(v.distro)
         if v.key == "latest":
             latest_distro = v.distro
@@ -79,37 +79,22 @@ def generate_new_versions() -> list[BuildVersion]:
             python_image = f"{full_version}-slim-{distro}"
             platforms = DEFAULT_PLATFORMS
 
-            if minor == latest_minor and distro == latest_distro:
-                new_versions.append(
-                    BuildVersion(
-                        key="latest",
-                        python_version=full_version,
-                        python_image=f"slim-{distro}",
-                        distro=distro,
-                        platforms=platforms,
-                    ),
-                )
-
+            tags = [(python_image, python_image)]
             if minor == latest_minor:
+                tags.append((f"slim-{distro}", f"slim-{distro}"))
+                if distro == latest_distro:
+                    tags.append(("latest", f"slim-{distro}"))
+
+            for key, image in tags:
                 new_versions.append(
                     BuildVersion(
-                        key=f"slim-{distro}",
+                        key=key,
                         python_version=full_version,
-                        python_image=f"slim-{distro}",
+                        python_image=image,
                         distro=distro,
                         platforms=platforms,
                     ),
                 )
-
-            new_versions.append(
-                BuildVersion(
-                    key=python_image,
-                    python_version=full_version,
-                    python_image=python_image,
-                    distro=distro,
-                    platforms=platforms,
-                ),
-            )
 
     return new_versions
 

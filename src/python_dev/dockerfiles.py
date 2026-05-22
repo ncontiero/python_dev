@@ -1,18 +1,16 @@
 import dataclasses
 import datetime
 import json
-import logging
 from typing import TYPE_CHECKING, Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from build_versions.constants import DOCKERFILES_PATH
-from build_versions.versions import BuildVersion
+from .constants import DOCKERFILES_PATH
+from .logger import logger
+from .versions import BuildVersion
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
-
-logger = logging.getLogger("dpn")
 
 env = Environment(loader=FileSystemLoader("./templates"), autoescape=select_autoescape())
 
@@ -23,14 +21,18 @@ def _render_template(template_name: str, context: Mapping[str, Any]) -> str:
 
 
 def render_dockerfile(version: BuildVersion) -> str:
-    distro = "debian"
+    base_mapping = {
+        "bookworm": "debian",
+        "trixie": "debian",
+    }
+    base = base_mapping.get(version.distro, "debian")
 
     context = dataclasses.asdict(version) | {
         "now": datetime.datetime.now(datetime.UTC).isoformat()[:-7],
         "distro": version.distro,
     }
 
-    return _render_template(f"{distro}.Dockerfile", context)
+    return _render_template(f"{base}.Dockerfile", context)
 
 
 def render_dockerfile_with_context(config_json: str) -> None:

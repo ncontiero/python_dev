@@ -1,17 +1,15 @@
 import dataclasses
 import json
-import logging
 import os
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from .logger import logger
+
 if TYPE_CHECKING:
-    from build_versions.versions import BuildVersion
+    from .versions import BuildVersion
 
 CI_EVENT_SCHEDULED = "scheduled"
-
-logger = logging.getLogger("dpn")
-
 GITHUB_OUTPUT = os.getenv("GITHUB_OUTPUT", "")
 
 
@@ -19,8 +17,12 @@ def _github_action_set_output(key: str, value: str) -> None:
     """Write
     https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-output-parameter
     """
+    if not GITHUB_OUTPUT:
+        logger.warning(f"GITHUB_OUTPUT is not set. Would have written: {key}={value}")
+        return
+
     with Path(GITHUB_OUTPUT).open("a") as fp:
-        fp.write(f"{key}={value}")
+        fp.write(f"{key}={value}\n")
 
 
 def generate_matrix(versions: list[BuildVersion]) -> None:

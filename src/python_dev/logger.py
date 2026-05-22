@@ -1,6 +1,6 @@
 import logging
 
-logger = logging.getLogger("dpn")
+logger = logging.getLogger("pdev")
 
 
 def init_logging(verbose: bool = False) -> None:

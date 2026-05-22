@@ -1,7 +1,7 @@
 import json
 from dataclasses import dataclass
 
-from build_versions.constants import VERSIONS_PATH
+from .constants import VERSIONS_PATH
 
 
 @dataclass

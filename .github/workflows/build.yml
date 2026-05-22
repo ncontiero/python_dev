@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: uv sync
       - name: Generate build matrix
-        run: uv run -m build_versions.main --ci-matrix
+        run: uv run pdev ci-matrix
         id: set-matrix
 
   build:
@@ -46,7 +46,7 @@ jobs:
       - name: Install dependencies
         run: uv sync
       - name: Generate Dockerfile from config
-        run: uv run -m build_versions.main --dockerfile-with-context '${{ toJSON(matrix) }}'
+        run: uv run pdev render-dockerfile '${{ toJSON(matrix) }}'
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v4
       - name: Set up Docker Buildx

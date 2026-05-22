@@ -21,20 +21,20 @@
       ]
     },
     {
-      "key": "3.14.5-slim-trixie",
+      "key": "slim-bookworm",
       "python_version": "3.14.5",
-      "python_image": "3.14.5-slim-trixie",
-      "distro": "trixie",
+      "python_image": "slim-bookworm",
+      "distro": "bookworm",
       "platforms": [
         "linux/amd64",
         "linux/arm64"
       ]
     },
     {
-      "key": "slim-bookworm",
+      "key": "3.14.5-slim-trixie",
       "python_version": "3.14.5",
-      "python_image": "slim-bookworm",
-      "distro": "bookworm",
+      "python_image": "3.14.5-slim-trixie",
+      "distro": "trixie",
       "platforms": [
         "linux/amd64",
         "linux/arm64"
