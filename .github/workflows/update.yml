@@ -24,7 +24,7 @@ jobs:
       - name: Commit and push changes
         if: steps.git-check.outputs.changed == 'true'
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Nicolas Contiero"
+          git config user.email "git@ncontiero.com"
           git commit -am "chore(deps): update python versions"
           git push
