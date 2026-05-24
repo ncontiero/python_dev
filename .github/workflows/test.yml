@@ -1,4 +1,4 @@
-name: Test
+name: Tests
 
 on:
   pull_request:
@@ -12,7 +12,7 @@ jobs:
       - uses: astral-sh/setup-uv@v8.1.0
         with:
           enable-cache: true
-      - name: Install dependencies
-        run: uv sync
       - name: Run tests
         run: uv run pytest
+      - name: Lint
+        run: uv run pre-commit run -a
