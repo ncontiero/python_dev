@@ -97,7 +97,7 @@ jobs:
           git commit -am "docs: update readme tags table"
           git push
       - name: Update Docker Hub Description
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: steps.git-check.outputs.changed == 'true'
         uses: peter-evans/dockerhub-description@v5
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
