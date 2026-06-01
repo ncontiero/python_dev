@@ -3,7 +3,7 @@
 FROM python:{{ python_image }}
 LABEL org.opencontainers.image.authors="Nicolas Contiero <https://github.com/ncontiero>"
 
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+COPY --from=ghcr.io/astral-sh/uv:latest@sha256:78bc42400d77b0678ba95765305c826652ed5431f399257271dda681d0318f03 /uv /uvx /bin/
 
 ARG USERNAME=dev-user
 ARG APP_HOME=/home/${USERNAME}/app
