@@ -7,24 +7,25 @@ on:
 
 jobs:
   update:
+    name: Update Versions
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          token: ${{ secrets.PAT }}
       - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
         with:
           enable-cache: true
       - name: Update versions
         run: uv run pdev update
-      - name: Check for changes
-        id: git-check
-        run: |
-          git diff --exit-code || echo "changed=true" >> $GITHUB_OUTPUT
-      - name: Commit and push changes
-        if: steps.git-check.outputs.changed == 'true'
-        run: |
-          git config user.name "Nicolas Contiero"
-          git config user.email "git@ncontiero.com"
-          git commit -am "chore(deps): update python versions"
-          git push
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(deps): update python versions"
+          title: "chore(deps): update python versions"
+          body: |
+            Automated PR to update `versions.json` with the latest Python patch versions from Docker Hub.
+          branch: chore/update-python-versions
+          delete-branch: true
