@@ -85,19 +85,14 @@ jobs:
           enable-cache: true
       - name: Update README.md
         run: uv run pdev update-readme
-      - name: Check for changes
-        id: git-check
-        run: |
-          git diff --exit-code || echo "changed=true" >> $GITHUB_OUTPUT
       - name: Commit and push changes
-        if: steps.git-check.outputs.changed == 'true'
-        run: |
-          git config user.name "Nicolas Contiero"
-          git config user.email "git@ncontiero.com"
-          git commit -am "docs: update readme tags table"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
+        id: auto-commit-action
+        with:
+          commit_message: "docs: update readme tags table"
+          file_pattern: "README.md"
       - name: Update Docker Hub Description
-        if: steps.git-check.outputs.changed == 'true'
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
         uses: peter-evans/dockerhub-description@1b9a80c056b620d92cedb9d9b5a223409c68ddfa # v5
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
