@@ -39,6 +39,7 @@ lint.ignore = [
   "FBT002", # Allow boolean traps
   "G004",   # Allow using f-strings when logging
   "T201",   # This is a cli
+  "CPY001", # Allow missing copyright notice
 ]
 
 [tool.ruff.lint.per-file-ignores]
