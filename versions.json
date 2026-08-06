@@ -2,7 +2,7 @@
   "versions": [
     {
       "key": "latest",
-      "python_version": "3.14.6",
+      "python_version": "3.14.7",
       "python_image": "slim-trixie",
       "distro": "trixie",
       "platforms": [
@@ -12,7 +12,7 @@
     },
     {
       "key": "slim-trixie",
-      "python_version": "3.14.6",
+      "python_version": "3.14.7",
       "python_image": "slim-trixie",
       "distro": "trixie",
       "platforms": [
@@ -22,7 +22,7 @@
     },
     {
       "key": "slim-bookworm",
-      "python_version": "3.14.6",
+      "python_version": "3.14.7",
       "python_image": "slim-bookworm",
       "distro": "bookworm",
       "platforms": [
@@ -31,9 +31,9 @@
       ]
     },
     {
-      "key": "3.14.6-slim-trixie",
-      "python_version": "3.14.6",
-      "python_image": "3.14.6-slim-trixie",
+      "key": "3.14.7-slim-trixie",
+      "python_version": "3.14.7",
+      "python_image": "3.14.7-slim-trixie",
       "distro": "trixie",
       "platforms": [
         "linux/amd64",
@@ -41,9 +41,9 @@
       ]
     },
     {
-      "key": "3.14.6-slim-bookworm",
-      "python_version": "3.14.6",
-      "python_image": "3.14.6-slim-bookworm",
+      "key": "3.14.7-slim-bookworm",
+      "python_version": "3.14.7",
+      "python_image": "3.14.7-slim-bookworm",
       "distro": "bookworm",
       "platforms": [
         "linux/amd64",
