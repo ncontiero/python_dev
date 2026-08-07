@@ -12,8 +12,8 @@ To use a specific combination of Python see the following table of available ima
 <!-- TAGS_START -->
 | Tag                      | Python version | Distro        |
 | ------------------------ | -------------- | ------------- |
-| `3.14.6-slim-trixie`     | 3.14.6         | trixie        |
-| `3.14.6-slim-bookworm`   | 3.14.6         | bookworm      |
+| `3.14.7-slim-trixie`     | 3.14.7         | trixie        |
+| `3.14.7-slim-bookworm`   | 3.14.7         | bookworm      |
 | `3.13.14-slim-trixie`    | 3.13.14        | trixie        |
 | `3.13.14-slim-bookworm`  | 3.13.14        | bookworm      |
 | `3.12.13-slim-trixie`    | 3.12.13        | trixie        |
