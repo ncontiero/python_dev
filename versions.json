@@ -71,9 +71,9 @@
       ]
     },
     {
-      "key": "3.12.13-slim-trixie",
-      "python_version": "3.12.13",
-      "python_image": "3.12.13-slim-trixie",
+      "key": "3.12.14-slim-trixie",
+      "python_version": "3.12.14",
+      "python_image": "3.12.14-slim-trixie",
       "distro": "trixie",
       "platforms": [
         "linux/amd64",
@@ -81,9 +81,9 @@
       ]
     },
     {
-      "key": "3.12.13-slim-bookworm",
-      "python_version": "3.12.13",
-      "python_image": "3.12.13-slim-bookworm",
+      "key": "3.12.14-slim-bookworm",
+      "python_version": "3.12.14",
+      "python_image": "3.12.14-slim-bookworm",
       "distro": "bookworm",
       "platforms": [
         "linux/amd64",
@@ -91,9 +91,9 @@
       ]
     },
     {
-      "key": "3.11.15-slim-trixie",
-      "python_version": "3.11.15",
-      "python_image": "3.11.15-slim-trixie",
+      "key": "3.11.16-slim-trixie",
+      "python_version": "3.11.16",
+      "python_image": "3.11.16-slim-trixie",
       "distro": "trixie",
       "platforms": [
         "linux/amd64",
@@ -101,9 +101,9 @@
       ]
     },
     {
-      "key": "3.11.15-slim-bookworm",
-      "python_version": "3.11.15",
-      "python_image": "3.11.15-slim-bookworm",
+      "key": "3.11.16-slim-bookworm",
+      "python_version": "3.11.16",
+      "python_image": "3.11.16-slim-bookworm",
       "distro": "bookworm",
       "platforms": [
         "linux/amd64",
@@ -111,9 +111,9 @@
       ]
     },
     {
-      "key": "3.10.20-slim-trixie",
-      "python_version": "3.10.20",
-      "python_image": "3.10.20-slim-trixie",
+      "key": "3.10.21-slim-trixie",
+      "python_version": "3.10.21",
+      "python_image": "3.10.21-slim-trixie",
       "distro": "trixie",
       "platforms": [
         "linux/amd64",
@@ -121,9 +121,9 @@
       ]
     },
     {
-      "key": "3.10.20-slim-bookworm",
-      "python_version": "3.10.20",
-      "python_image": "3.10.20-slim-bookworm",
+      "key": "3.10.21-slim-bookworm",
+      "python_version": "3.10.21",
+      "python_image": "3.10.21-slim-bookworm",
       "distro": "bookworm",
       "platforms": [
         "linux/amd64",
