@@ -14,8 +14,8 @@ To use a specific combination of Python see the following table of available ima
 | ------------------------ | -------------- | ------------- |
 | `3.14.7-slim-trixie`     | 3.14.7         | trixie        |
 | `3.14.7-slim-bookworm`   | 3.14.7         | bookworm      |
-| `3.13.14-slim-trixie`    | 3.13.14        | trixie        |
-| `3.13.14-slim-bookworm`  | 3.13.14        | bookworm      |
+| `3.13.15-slim-trixie`    | 3.13.15        | trixie        |
+| `3.13.15-slim-bookworm`  | 3.13.15        | bookworm      |
 | `3.12.13-slim-trixie`    | 3.12.13        | trixie        |
 | `3.12.13-slim-bookworm`  | 3.12.13        | bookworm      |
 | `3.11.15-slim-trixie`    | 3.11.15        | trixie        |
