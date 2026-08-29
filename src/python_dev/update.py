@@ -4,7 +4,7 @@ import re
 
 import httpx
 
-from .constants import DOCKERHUB_API_URL, VERSIONS_PATH
+from .constants import DOCKERHUB_AUTH_URL, DOCKERHUB_TAGS_URL, VERSIONS_PATH
 from .logger import logger
 from .versions import BuildVersion, load_versions
 
@@ -13,21 +13,35 @@ def fetch_latest_patch_versions(minor_versions: set[str], distros: list[str]) ->
     """
     Returns a dict mapping minor_version -> { distro -> full_version }
     """
+    token_response = httpx.get(
+        DOCKERHUB_AUTH_URL,
+        params={
+            "service": "registry.docker.io",
+            "scope": "repository:library/python:pull",
+        },
+        timeout=30,
+    )
+    token_response.raise_for_status()
+    token = token_response.json()["token"]
+
+    tags_response = httpx.get(
+        DOCKERHUB_TAGS_URL,
+        params={"n": 10_000},
+        headers={"Authorization": f"Bearer {token}"},
+        timeout=30,
+    )
+    tags_response.raise_for_status()
+    tags = tags_response.json().get("tags", [])
+
     latest_versions: dict[str, dict[str, str]] = {m: {} for m in minor_versions}
     for minor_version in minor_versions:
-        url = f"{DOCKERHUB_API_URL}?page_size=100&name={minor_version}"
-        response = httpx.get(url)
-        response.raise_for_status()
-        results = response.json().get("results", [])
-
         for distro in distros:
             pattern = re.compile(rf"^{re.escape(minor_version)}\.(\d+)-slim-{re.escape(distro)}$")
             max_patch = -1
             full_version = None
 
-            for tag in results:
-                name = tag["name"]
-                if match := pattern.match(name):
+            for tag in tags:
+                if match := pattern.match(tag):
                     patch = int(match.group(1))
                     if patch > max_patch:
                         max_patch = patch

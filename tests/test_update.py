@@ -12,15 +12,17 @@ if TYPE_CHECKING:
 
 def test_fetch_latest_patch_versions(mocker: MockerFixture) -> None:
     mock_get = mocker.patch("httpx.get")
-    mock_response = mocker.Mock()
-    mock_response.json.return_value = {
-        "results": [
-            {"name": "3.14.5-slim-bookworm"},
-            {"name": "3.14.4-slim-bookworm"},
-            {"name": "3.14.5-slim-trixie"},
+    token_response = mocker.Mock()
+    token_response.json.return_value = {"token": "registry-token"}
+    tags_response = mocker.Mock()
+    tags_response.json.return_value = {
+        "tags": [
+            "3.14.5-slim-bookworm",
+            "3.14.4-slim-bookworm",
+            "3.14.5-slim-trixie",
         ],
     }
-    mock_get.return_value = mock_response
+    mock_get.side_effect = [token_response, tags_response]
 
     result = fetch_latest_patch_versions({"3.14"}, ["bookworm", "trixie"])
 
@@ -30,6 +32,9 @@ def test_fetch_latest_patch_versions(mocker: MockerFixture) -> None:
             "trixie": "3.14.5",
         },
     }
+    token_response.raise_for_status.assert_called_once_with()
+    tags_response.raise_for_status.assert_called_once_with()
+    assert mock_get.call_count == 2
 
 
 def test_generate_new_versions(mocker: MockerFixture) -> None:

@@ -14,4 +14,5 @@ BASE_MAPPING = {
     "trixie": "debian",
 }
 
-DOCKERHUB_API_URL = "https://hub.docker.com/v2/repositories/library/python/tags/"
+DOCKERHUB_AUTH_URL = "https://auth.docker.io/token"
+DOCKERHUB_TAGS_URL = "https://registry-1.docker.io/v2/library/python/tags/list"
