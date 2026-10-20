@@ -30,11 +30,11 @@ To use a specific combination of Python see the following table of available ima
 
 | Python version | Start      | End     |
 | -------------- | ---------- | ------- |
+| 3.15           | 2026-10-09 | 2031-10 |
 | 3.14           | 2025-10-07 | 2030-10 |
 | 3.13           | 2024-10-07 | 2029-10 |
 | 3.12           | 2023-10-02 | 2028-10 |
 | 3.11           | 2022-10-24 | 2027-10 |
-| 3.10           | 2021-10-04 | 2026-10 |
 
 Versions are kept up to date using official sources. For Python we scrape the _Supported Versions_ table at [devguide.python.org/versions](https://devguide.python.org/versions/#supported-versions).
 
