@@ -1,5 +1,5 @@
 import dataclasses
-import datetime
+import datetime as dt
 import json
 from typing import TYPE_CHECKING, Any
 
@@ -24,7 +24,7 @@ def render_dockerfile(version: BuildVersion) -> str:
     base = BASE_MAPPING.get(version.distro, "debian")
 
     context = dataclasses.asdict(version) | {
-        "now": datetime.datetime.now(datetime.UTC).replace(microsecond=0).isoformat(),
+        "now": dt.datetime.now(dt.UTC).replace(microsecond=0).isoformat(),
         "distro": version.distro,
     }
 
