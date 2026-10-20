@@ -12,6 +12,8 @@ To use a specific combination of Python see the following table of available ima
 <!-- TAGS_START -->
 | Tag                      | Python version | Distro        |
 | ------------------------ | -------------- | ------------- |
+| `3.15.0-slim-trixie`     | 3.15.0         | trixie        |
+| `3.15.0-slim-bookworm`   | 3.15.0         | bookworm      |
 | `3.14.8-slim-trixie`     | 3.14.8         | trixie        |
 | `3.14.8-slim-bookworm`   | 3.14.8         | bookworm      |
 | `3.13.16-slim-trixie`    | 3.13.16        | trixie        |
@@ -20,8 +22,6 @@ To use a specific combination of Python see the following table of available ima
 | `3.12.15-slim-bookworm`  | 3.12.15        | bookworm      |
 | `3.11.17-slim-trixie`    | 3.11.17        | trixie        |
 | `3.11.17-slim-bookworm`  | 3.11.17        | bookworm      |
-| `3.10.22-slim-trixie`    | 3.10.22        | trixie        |
-| `3.10.22-slim-bookworm`  | 3.10.22        | bookworm      |
 <!-- TAGS_END -->
 
 [See more](https://hub.docker.com/r/dkshs/python_dev/tags)
