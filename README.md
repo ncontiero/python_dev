@@ -12,16 +12,16 @@ To use a specific combination of Python see the following table of available ima
 <!-- TAGS_START -->
 | Tag                      | Python version | Distro        |
 | ------------------------ | -------------- | ------------- |
-| `3.15.1-slim-trixie`     | 3.15.1         | trixie        |
-| `3.15.1-slim-bookworm`   | 3.15.1         | bookworm      |
-| `3.14.9-slim-trixie`     | 3.14.9         | trixie        |
-| `3.14.9-slim-bookworm`   | 3.14.9         | bookworm      |
-| `3.13.17-slim-trixie`    | 3.13.17        | trixie        |
-| `3.13.17-slim-bookworm`  | 3.13.17        | bookworm      |
-| `3.12.15-slim-trixie`    | 3.12.15        | trixie        |
-| `3.12.15-slim-bookworm`  | 3.12.15        | bookworm      |
-| `3.11.17-slim-trixie`    | 3.11.17        | trixie        |
-| `3.11.17-slim-bookworm`  | 3.11.17        | bookworm      |
+| `3.15.2-slim-trixie`     | 3.15.2         | trixie        |
+| `3.15.2-slim-bookworm`   | 3.15.2         | bookworm      |
+| `3.14.10-slim-trixie`    | 3.14.10        | trixie        |
+| `3.14.10-slim-bookworm`  | 3.14.10        | bookworm      |
+| `3.13.18-slim-trixie`    | 3.13.18        | trixie        |
+| `3.13.18-slim-bookworm`  | 3.13.18        | bookworm      |
+| `3.12.16-slim-trixie`    | 3.12.16        | trixie        |
+| `3.12.16-slim-bookworm`  | 3.12.16        | bookworm      |
+| `3.11.18-slim-trixie`    | 3.11.18        | trixie        |
+| `3.11.18-slim-bookworm`  | 3.11.18        | bookworm      |
 <!-- TAGS_END -->
 
 [See more](https://hub.docker.com/r/dkshs/python_dev/tags)
